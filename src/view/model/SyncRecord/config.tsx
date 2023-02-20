@@ -14,13 +14,13 @@ export const syncColumns = () => [
     ),
   },
   {
-    title: 'Act',
+    title: '行为',
     dataIndex: 'act',
     key: 'act',
     // width: 200,
   },
   {
-    title: 'Tags',
+    title: '标签',
     dataIndex: 'tags',
     key: 'tags',
     // width: 150,
@@ -33,7 +33,7 @@ export const syncColumns = () => [
     ),
   },
   {
-    title: 'Enable',
+    title: '开关',
     dataIndex: 'enable',
     key: 'enable',
     // width: 80,

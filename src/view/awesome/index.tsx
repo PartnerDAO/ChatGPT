@@ -114,7 +114,7 @@ export default function Awesome() {
       <div className="chat-table-btns">
         <div>
           <Button className="chat-add-btn" type="primary" onClick={opInfo.opNew}>
-            Add URL
+            添加 URL
           </Button>
           <Button type="dashed" onClick={handlePreview}>
             Preview Dashboard

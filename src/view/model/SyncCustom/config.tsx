@@ -9,27 +9,27 @@ import { chatRoot, fmtDate } from '@/utils';
 
 export const syncColumns = () => [
   {
-    title: 'Name',
+    title: '名字',
     dataIndex: 'name',
     key: 'name',
     width: 100,
   },
   {
-    title: 'Protocol',
+    title: '协议',
     dataIndex: 'protocol',
     key: 'protocol',
     width: 80,
     render: (v: string) => <Tag>{v}</Tag>,
   },
   {
-    title: 'PATH',
+    title: '路径',
     dataIndex: 'path',
     key: 'path',
     width: 180,
     render: (_: string, row: any) => <RenderPath row={row} />,
   },
   {
-    title: 'Last updated',
+    title: '上次更新时间',
     dataIndex: 'last_updated',
     key: 'last_updated',
     width: 140,
@@ -41,7 +41,7 @@ export const syncColumns = () => [
     ),
   },
   {
-    title: 'Action',
+    title: '操作',
     fixed: 'right',
     width: 150,
     render: (_: any, row: any, actions: any) => {
@@ -54,11 +54,11 @@ export const syncColumns = () => [
             okText="Yes"
             cancelText="No"
           >
-            <a>Sync</a>
+            <a>同步</a>
           </Popconfirm>
           {row.last_updated && (
             <Link to={`${row.id}`} state={row}>
-              View
+              浏览
             </Link>
           )}
           <a onClick={() => actions.setRecord(row, 'edit')}>Edit</a>
@@ -68,7 +68,7 @@ export const syncColumns = () => [
             okText="Yes"
             cancelText="No"
           >
-            <a>Delete</a>
+            <a>删除</a>
           </Popconfirm>
         </Space>
       );

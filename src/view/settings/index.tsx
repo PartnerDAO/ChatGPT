@@ -39,27 +39,27 @@ export default function Settings() {
   const onReset = async () => {
     const chatData = await invoke('reset_app_conf');
     setChatConf(chatData);
-    const isOk = await dialog.ask(`Configuration reset successfully, whether to restart?`, {
+    const isOk = await dialog.ask(`配置重置成功, 是否重启?`, {
       title: 'ChatGPT Preferences',
     });
     if (isOk) {
       process.relaunch();
       return;
     }
-    message.success('Configuration reset successfully');
+    message.success('配置重置成功');
   };
 
   const onFinish = async (values: any) => {
     if (!isEqual(omit(chatConf, ['default_origin']), values)) {
       await invoke('form_confirm', { data: values, label: 'main' });
-      const isOk = await dialog.ask(`Configuration saved successfully, whether to restart?`, {
-        title: 'ChatGPT Preferences',
+      const isOk = await dialog.ask(`配置保存成功, 是否重启?`, {
+        title: 'ChatGPT 首选项',
       });
       if (isOk) {
         process.relaunch();
         return;
       }
-      message.success('Configuration saved successfully');
+      message.success('配置保存成功');
     }
   };
 
@@ -81,33 +81,33 @@ export default function Settings() {
           activeKey={activeKey}
           onChange={handleTab}
           items={[
-            { label: 'General', key: 'general', children: <General /> },
-            { label: 'Main Window', key: 'main_window', children: <MainWindow /> },
-            { label: 'SystemTray Window', key: 'tray_window', children: <TrayWindow /> },
+            { label: '常规', key: 'general', children: <General /> },
+            { label: '主界面', key: 'main_window', children: <MainWindow /> },
+            { label: '系统托盘', key: 'tray_window', children: <TrayWindow /> },
           ]}
         />
 
         <Form.Item>
           <Space size={20}>
-            <Button onClick={onCancel}>Cancel</Button>
+            <Button onClick={onCancel}>取消</Button>
             <Button type="primary" htmlType="submit">
-              Submit
+              确定
             </Button>
             <Popconfirm
               title={
                 <div style={{ width: 360 }}>
-                  Are you sure you want to reset the configuration file
+                  你确定将配置文件
                   <a onClick={() => shell.open(filePath)} style={{ margin: '0 5px' }}>
                     {filePath}
                   </a>
-                  to the default?
+                  恢复到默认吗?
                 </div>
               }
               onConfirm={onReset}
-              okText="Yes"
-              cancelText="No"
+              okText="是"
+              cancelText="否"
             >
-              <Button type="dashed">Reset to defaults</Button>
+              <Button type="dashed">恢复默认</Button>
             </Popconfirm>
           </Space>
         </Form.Item>

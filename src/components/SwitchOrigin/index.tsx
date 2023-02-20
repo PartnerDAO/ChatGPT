@@ -28,12 +28,12 @@ const SwitchOrigin: FC<SwitchOriginProps> = ({ name }) => {
       <Form.Item
         label={
           <span>
-            Dashboard {labelName}{' '}
+            仪表盘 {labelName}{' '}
             <Tooltip
               title={
                 <div>
                   <p>
-                    <b>Set Dashboard as the application default window.</b>
+                    <b>仪表板设置为应用程序默认的窗口。</b>
                   </p>
                   <p>
                     If this is enabled, the <Tag color="blue">Switch Origin {labelName}</Tag>{' '}
@@ -58,16 +58,15 @@ const SwitchOrigin: FC<SwitchOriginProps> = ({ name }) => {
       <Form.Item
         label={
           <span>
-            Switch Origin {labelName}{' '}
+            切换首页 {labelName}{' '}
             <Tooltip
               title={
                 <div>
                   <p>
-                    <b>Set a single URL as the application default window.</b>
+                    <b>将单个 URL 设置为应用程序默认窗口。</b>
                   </p>
                   <p>
-                    If you need to set a new URL as the application loading window, please add the
-                    URL in the <Link to="/awesome">Awesome</Link> menu and then select it.
+                    如果您需要设置一个新的网址作为应用程序加载窗口，请在 <Link to="/awesome">Awesome</Link> 菜单的页面添加，然后选择它。
                   </p>
                 </div>
               }

@@ -10,13 +10,13 @@ export const modelColumns = () => [
     render: (v: string) => <Tag color="#2a2a2a">/{v}</Tag>,
   },
   {
-    title: 'Act',
+    title: '行为',
     dataIndex: 'act',
     key: 'act',
     width: 200,
   },
   {
-    title: 'Tags',
+    title: '标签',
     dataIndex: 'tags',
     key: 'tags',
     width: 150,
@@ -29,7 +29,7 @@ export const modelColumns = () => [
     ),
   },
   {
-    title: 'Enable',
+    title: '开关',
     dataIndex: 'enable',
     key: 'enable',
     width: 80,
@@ -46,7 +46,7 @@ export const modelColumns = () => [
     render: (v: string) => <span className="chat-prompts-val">{v}</span>,
   },
   {
-    title: 'Action',
+    title: '操作',
     key: 'action',
     fixed: 'right',
     width: 120,

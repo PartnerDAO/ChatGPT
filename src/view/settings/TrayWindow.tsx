@@ -20,13 +20,13 @@ const UALabel = () => {
 export default function TrayWindow() {
   return (
     <>
-      <Form.Item label="Enable SystemTray" name="tray" valuePropName="checked">
+      <Form.Item label="开启系统托盘" name="tray" valuePropName="checked">
         <Switch />
       </Form.Item>
-      <Form.Item label="Default Width" name="tray_width">
+      <Form.Item label="默认宽度" name="tray_width">
         <InputNumber />
       </Form.Item>
-      <Form.Item label="Default Height" name="tray_height">
+      <Form.Item label="默认高度" name="tray_height">
         <InputNumber />
       </Form.Item>
       <SwitchOrigin name="tray" />

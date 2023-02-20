@@ -22,8 +22,8 @@ pub fn init() -> Menu {
       #[cfg(target_os = "macos")]
       MenuItem::About(name.into(), AboutMetadata::default()).into(),
       #[cfg(not(target_os = "macos"))]
-      CustomMenuItem::new("about".to_string(), "About ChatGPT").into(),
-      CustomMenuItem::new("check_update".to_string(), "Check for Updates").into(),
+      CustomMenuItem::new("about".to_string(), "关于 ChatGPT").into(),
+      CustomMenuItem::new("check_update".to_string(), "检查更新").into(),
       MenuItem::Services.into(),
       MenuItem::Hide.into(),
       MenuItem::HideOthers.into(),
@@ -34,16 +34,16 @@ pub fn init() -> Menu {
   );
 
   let stay_on_top =
-    CustomMenuItem::new("stay_on_top".to_string(), "Stay On Top").accelerator("CmdOrCtrl+T");
+    CustomMenuItem::new("stay_on_top".to_string(), "置顶").accelerator("CmdOrCtrl+T");
   let stay_on_top_menu = if app_conf.stay_on_top {
     stay_on_top.selected()
   } else {
     stay_on_top
   };
 
-  let theme_light = CustomMenuItem::new("theme_light".to_string(), "Light");
-  let theme_dark = CustomMenuItem::new("theme_dark".to_string(), "Dark");
-  let theme_system = CustomMenuItem::new("theme_system".to_string(), "System");
+  let theme_light = CustomMenuItem::new("theme_light".to_string(), "亮色");
+  let theme_dark = CustomMenuItem::new("theme_dark".to_string(), "暗色");
+  let theme_system = CustomMenuItem::new("theme_system".to_string(), "跟随系统");
   let is_dark = app_conf.clone().theme_check("dark");
   let is_system = app_conf.clone().theme_check("system");
 
@@ -51,7 +51,7 @@ pub fn init() -> Menu {
   let update_silent = CustomMenuItem::new("update_silent".to_string(), "Silent");
   // let _update_disable = CustomMenuItem::new("update_disable".to_string(), "Disable");
 
-  let popup_search = CustomMenuItem::new("popup_search".to_string(), "Pop-up Search");
+  let popup_search = CustomMenuItem::new("popup_search".to_string(), "弹出搜索");
   let popup_search_menu = if app_conf.popup_search {
     popup_search.selected()
   } else {
@@ -76,9 +76,9 @@ pub fn init() -> Menu {
 
   let auto_update = app_conf.get_auto_update();
   let preferences_menu = Submenu::new(
-    "Preferences",
+    "首选项",
     Menu::with_items([
-      CustomMenuItem::new("control_center".to_string(), "Control Center")
+      CustomMenuItem::new("control_center".to_string(), "控制中心")
         .accelerator("CmdOrCtrl+Shift+P")
         .into(),
       MenuItem::Separator.into(),
@@ -86,14 +86,14 @@ pub fn init() -> Menu {
       #[cfg(target_os = "macos")]
       titlebar_menu.into(),
       #[cfg(target_os = "macos")]
-      CustomMenuItem::new("hide_dock_icon".to_string(), "Hide Dock Icon").into(),
+      CustomMenuItem::new("hide_dock_icon".to_string(), "隐藏Dock图标").into(),
       system_tray_menu.into(),
-      CustomMenuItem::new("inject_script".to_string(), "Inject Script")
+      CustomMenuItem::new("inject_script".to_string(), "脚本注入")
         .accelerator("CmdOrCtrl+J")
         .into(),
       MenuItem::Separator.into(),
       Submenu::new(
-        "Theme",
+        "主题",
         Menu::new()
           .add_item(if is_dark || is_system {
             theme_light
@@ -113,7 +113,7 @@ pub fn init() -> Menu {
       )
       .into(),
       Submenu::new(
-        "Auto Update",
+        "关于更新",
         Menu::new()
           .add_item(if auto_update == "prompt" {
             update_prompt.selected()
@@ -133,22 +133,22 @@ pub fn init() -> Menu {
       .into(),
       MenuItem::Separator.into(),
       popup_search_menu.into(),
-      CustomMenuItem::new("sync_prompts".to_string(), "Sync Prompts").into(),
+      CustomMenuItem::new("sync_prompts".to_string(), "同步 Prompts").into(),
       MenuItem::Separator.into(),
-      CustomMenuItem::new("go_conf".to_string(), "Go to Config")
+      CustomMenuItem::new("go_conf".to_string(), "打开配置目录")
         .accelerator("CmdOrCtrl+Shift+G")
         .into(),
-      CustomMenuItem::new("restart".to_string(), "Restart ChatGPT")
+      CustomMenuItem::new("restart".to_string(), "重启 ChatGPT")
         .accelerator("CmdOrCtrl+Shift+R")
         .into(),
-      CustomMenuItem::new("clear_conf".to_string(), "Clear Config").into(),
+      CustomMenuItem::new("clear_conf".to_string(), "清除配置").into(),
       MenuItem::Separator.into(),
       CustomMenuItem::new("buy_coffee".to_string(), "Buy lencx a coffee").into(),
     ]),
   );
 
   let edit_menu = Submenu::new(
-    "Edit",
+    "编辑",
     Menu::new()
       .add_native_item(MenuItem::Undo)
       .add_native_item(MenuItem::Redo)
@@ -160,18 +160,18 @@ pub fn init() -> Menu {
   );
 
   let view_menu = Submenu::new(
-    "View",
+    "浏览",
     Menu::new()
-      .add_item(CustomMenuItem::new("go_back".to_string(), "Go Back").accelerator("CmdOrCtrl+["))
+      .add_item(CustomMenuItem::new("go_back".to_string(), "返回").accelerator("CmdOrCtrl+["))
       .add_item(
-        CustomMenuItem::new("go_forward".to_string(), "Go Forward").accelerator("CmdOrCtrl+]"),
+        CustomMenuItem::new("go_forward".to_string(), "前进").accelerator("CmdOrCtrl+]"),
       )
       .add_item(
-        CustomMenuItem::new("scroll_top".to_string(), "Scroll to Top of Screen")
+        CustomMenuItem::new("scroll_top".to_string(), "回到顶部")
           .accelerator("CmdOrCtrl+Up"),
       )
       .add_item(
-        CustomMenuItem::new("scroll_bottom".to_string(), "Scroll to Bottom of Screen")
+        CustomMenuItem::new("scroll_bottom".to_string(), "滚动到底部")
           .accelerator("CmdOrCtrl+Down"),
       )
       .add_native_item(MenuItem::Separator)
@@ -182,12 +182,12 @@ pub fn init() -> Menu {
       .add_item(CustomMenuItem::new("zoom_in".to_string(), "Zoom In").accelerator("CmdOrCtrl+Plus"))
       .add_native_item(MenuItem::Separator)
       .add_item(
-        CustomMenuItem::new("reload".to_string(), "Refresh the Screen").accelerator("CmdOrCtrl+R"),
+        CustomMenuItem::new("reload".to_string(), "刷新").accelerator("CmdOrCtrl+R"),
       ),
   );
 
   let window_menu = Submenu::new(
-    "Window",
+    "界面",
     Menu::new()
       .add_item(CustomMenuItem::new(
         "app_website".to_string(),
@@ -200,16 +200,16 @@ pub fn init() -> Menu {
   );
 
   let help_menu = Submenu::new(
-    "Help",
+    "帮助",
     Menu::new()
       .add_item(CustomMenuItem::new(
         "chatgpt_log".to_string(),
-        "ChatGPT Log",
+        "ChatGPT 日志",
       ))
-      .add_item(CustomMenuItem::new("update_log".to_string(), "Update Log"))
-      .add_item(CustomMenuItem::new("report_bug".to_string(), "Report Bug"))
+      .add_item(CustomMenuItem::new("update_log".to_string(), "更新记录"))
+      .add_item(CustomMenuItem::new("report_bug".to_string(), "Bug反馈"))
       .add_item(
-        CustomMenuItem::new("dev_tools".to_string(), "Toggle Developer Tools")
+        CustomMenuItem::new("dev_tools".to_string(), "打开开发者工具")
           .accelerator("CmdOrCtrl+Shift+I"),
       ),
   );

@@ -12,7 +12,7 @@ interface FilePathProps {
   url?: string;
 }
 
-const FilePath: FC<FilePathProps> = ({ className, label = 'PATH', paths = '', url, content }) => {
+const FilePath: FC<FilePathProps> = ({ className, label = '路径', paths = '', url, content }) => {
   const [filePath, setPath] = useState('');
 
   useEffect(() => {

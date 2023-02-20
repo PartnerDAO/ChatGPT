@@ -7,19 +7,15 @@ import { DISABLE_AUTO_COMPLETE } from '@/utils';
 const PopupSearchLabel = () => {
   return (
     <span>
-      Pop-up Search{' '}
+      弹出搜索{' '}
       <Tooltip
         title={
           <div>
             <div style={{ marginBottom: 10 }}>
-              Generate images according to the content: Select the ChatGPT content with the mouse,
-              no more than 400 characters. the <b>DALL·E 2</b> button appears, and click to jump
-              (Note: because the search content filled by the script cannot trigger the event
-              directly, you need to enter a space in the input box to make the button clickable).
+                根据内容生成图像: 用鼠标选择 ChatGPT 内容，不超过400个字符。出现 DALL·E2 按钮，点击跳转(注意: 由于脚本填充的搜索内容不能直接触发事件，您需要在输入框中输入一个空格，使按钮可点击)。
             </div>
             <div>
-              The application is built using Tauri, and due to its security restrictions, some of
-              the action buttons will not work, so we recommend going to your browser.
+                该应用程序是使用 Tauri 构建的，由于其安全限制，一些操作按钮将无法工作，所以我们建议您使用浏览器。
             </div>
           </div>
         }
@@ -33,8 +29,8 @@ const PopupSearchLabel = () => {
 const MainCloseLabel = () => {
   return (
     <span>
-      Close Exit{' '}
-      <Tooltip title="Click the close button whether to exit directly, the default minimized.">
+      关闭直接退出{' '}
+      <Tooltip title="单击关闭按钮是否直接退出，默认最小化。">
         <QuestionCircleOutlined style={{ color: '#1677ff' }} />
       </Tooltip>
     </span>
@@ -44,16 +40,16 @@ const MainCloseLabel = () => {
 export default function MainWindow() {
   return (
     <>
-      <Form.Item label={<PopupSearchLabel />} name="popup_search" valuePropName="checked">
+      <Form.Item label={<PopupSearchLabel />} name="" valuePropName="checked">
         <Switch />
       </Form.Item>
       <Form.Item label={<MainCloseLabel />} name="main_close" valuePropName="checked">
         <Switch />
       </Form.Item>
-      <Form.Item label="Default Width" name="main_width">
+      <Form.Item label="默认宽度" name="main_width">
         <InputNumber />
       </Form.Item>
-      <Form.Item label="Default Height" name="main_height">
+      <Form.Item label="默认高度" name="main_height">
         <InputNumber />
       </Form.Item>
       <SwitchOrigin name="main" />

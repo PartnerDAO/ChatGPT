@@ -10,7 +10,7 @@ import { fmtDate, chatRoot } from '@/utils';
 
 export const notesColumns = () => [
   {
-    title: 'Name',
+    title: '名字',
     dataIndex: 'name',
     fixed: 'left',
     key: 'name',
@@ -20,21 +20,21 @@ export const notesColumns = () => [
     ),
   },
   {
-    title: 'Path',
+    title: '路径',
     dataIndex: 'path',
     key: 'path',
     width: 200,
     render: (_: string, row: any) => <RenderPath row={row} />,
   },
   {
-    title: 'Created',
+    title: '创建时间',
     dataIndex: 'created',
     key: 'created',
     width: 150,
     render: fmtDate,
   },
   {
-    title: 'Action',
+    title: '操作',
     fixed: 'right',
     width: 160,
     render: (_: any, row: any, actions: any) => {

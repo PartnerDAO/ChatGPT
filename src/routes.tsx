@@ -42,7 +42,7 @@ export const routes: Array<ChatRouteObject> = [
     path: '/settings',
     element: <Settings />,
     meta: {
-      label: 'Settings',
+      label: '设置',
       icon: <SettingOutlined />,
     },
   },
@@ -58,7 +58,7 @@ export const routes: Array<ChatRouteObject> = [
     path: '/notes',
     element: <Notes />,
     meta: {
-      label: 'Notes',
+      label: '笔记',
       icon: <FormOutlined />,
     },
   },
@@ -70,7 +70,7 @@ export const routes: Array<ChatRouteObject> = [
   {
     path: '/model',
     meta: {
-      label: 'Language Model',
+      label: '语言模型',
       icon: <BulbOutlined />,
     },
     children: [
@@ -78,7 +78,7 @@ export const routes: Array<ChatRouteObject> = [
         path: 'user-custom',
         element: <UserCustom />,
         meta: {
-          label: 'User Custom',
+          label: '用户自定义',
           icon: <UserOutlined />,
         },
       },
@@ -87,7 +87,7 @@ export const routes: Array<ChatRouteObject> = [
         path: 'sync-prompts',
         element: <SyncPrompts />,
         meta: {
-          label: 'Sync Prompts',
+          label: '同步 Prompts',
           icon: <SyncOutlined />,
         },
       },
@@ -95,7 +95,7 @@ export const routes: Array<ChatRouteObject> = [
         path: 'sync-custom',
         element: <SyncCustom />,
         meta: {
-          label: 'Sync Custom',
+          label: '同步自定义',
           icon: <FileSyncOutlined />,
         },
       },
@@ -110,7 +110,7 @@ export const routes: Array<ChatRouteObject> = [
     path: '/download',
     element: <Download />,
     meta: {
-      label: 'Download',
+      label: '下载',
       icon: <DownloadOutlined />,
     },
   },
@@ -118,7 +118,7 @@ export const routes: Array<ChatRouteObject> = [
     path: '/about',
     element: <About />,
     meta: {
-      label: 'About',
+      label: '关于',
       icon: <InfoCircleOutlined />,
     },
   },

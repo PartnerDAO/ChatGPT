@@ -3,7 +3,7 @@ import { open } from '@tauri-apps/api/shell';
 
 export const awesomeColumns = () => [
   {
-    title: 'Title',
+    title: '标题',
     dataIndex: 'title',
     fixed: 'left',
     key: 'title',
@@ -23,7 +23,7 @@ export const awesomeColumns = () => [
   //   width: 120,
   // },
   {
-    title: 'Enable',
+    title: '开关',
     dataIndex: 'enable',
     key: 'enable',
     width: 80,
@@ -32,14 +32,14 @@ export const awesomeColumns = () => [
     ),
   },
   {
-    title: 'Category',
+    title: '分类',
     dataIndex: 'category',
     key: 'category',
     width: 120,
     render: (v: string) => <Tag color="geekblue">{v}</Tag>,
   },
   {
-    title: 'Tags',
+    title: '标签',
     dataIndex: 'tags',
     key: 'tags',
     width: 150,
@@ -52,7 +52,7 @@ export const awesomeColumns = () => [
     ),
   },
   {
-    title: 'Action',
+    title: '操作',
     fixed: 'right',
     width: 150,
     render: (_: any, row: any, actions: any) => {

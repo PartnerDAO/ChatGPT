@@ -19,8 +19,8 @@ export default function About() {
     <div className="about">
       <Tabs
         items={[
-          { label: 'About ChatGPT', key: 'about', children: <AboutChatGPT /> },
-          { label: 'Update Log', key: 'log', children: <LogTab content={logContent} /> },
+          { label: '关于 ChatGPT', key: 'about', children: <AboutChatGPT /> },
+          { label: '更新日志', key: 'log', children: <LogTab content={logContent} /> },
         ]}
       />
     </div>

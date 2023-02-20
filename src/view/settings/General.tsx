@@ -15,10 +15,10 @@ export default function General() {
 
   return (
     <>
-      <Form.Item label="Stay On Top" name="stay_on_top" valuePropName="checked">
+      <Form.Item label="置顶" name="stay_on_top" valuePropName="checked">
         <Switch />
       </Form.Item>
-      <Form.Item label="Save Window State" name="save_window_state" valuePropName="checked">
+      <Form.Item label="保存系统状态" name="save_window_state" valuePropName="checked">
         <Switch />
       </Form.Item>
       {platformInfo === 'darwin' && (
@@ -31,17 +31,17 @@ export default function General() {
           <Switch />
         </Form.Item>
       )}
-      <Form.Item label="Theme" name="theme">
+      <Form.Item label="主题" name="theme">
         <Radio.Group>
-          <Radio value="light">Light</Radio>
-          <Radio value="dark">Dark</Radio>
+          <Radio value="light">亮色</Radio>
+          <Radio value="dark">暗色</Radio>
           {['darwin', 'windows'].includes(platformInfo) && <Radio value="System">System</Radio>}
         </Radio.Group>
       </Form.Item>
       <Form.Item label={<AutoUpdateLabel />} name="auto_update">
         <Radio.Group>
-          <Radio value="prompt">Prompt</Radio>
-          <Radio value="silent">Silent</Radio>
+          <Radio value="prompt">提醒</Radio>
+          <Radio value="silent">静默</Radio>
           {/*<Radio value="disable">Disable</Radio>*/}
         </Radio.Group>
       </Form.Item>
@@ -55,16 +55,16 @@ export default function General() {
 const AutoUpdateLabel = () => {
   return (
     <span>
-      Auto Update{' '}
+      自动更新{' '}
       <Tooltip
         title={
           <div>
-            <div>Auto Update Policy</div>
+            <div>自动更新策略</div>
             <div>
-              <strong>Prompt</strong>: prompt to install
+              <strong>提醒</strong>: 提醒安装
             </div>
             <div>
-              <strong>Silent</strong>: install silently
+              <strong>静默</strong>: 静默安装
             </div>
             {/* <div><strong>Disable</strong>: disable auto update</div> */}
           </div>
@@ -79,12 +79,12 @@ const AutoUpdateLabel = () => {
 const GlobalShortcutLabel = () => {
   return (
     <div>
-      Global Shortcut{' '}
+      全局快捷键{' '}
       <Tooltip
         title={
           <div>
-            <div>Shortcut definition, modifiers and key separated by "+" e.g. CmdOrControl+Q</div>
-            <div style={{ margin: '10px 0' }}>If empty, the shortcut is disabled.</div>
+            <div>快捷键定义, 用“+”分隔的修饰符和按键，例如 CmdOrControl + Q</div>
+            <div style={{ margin: '10px 0' }}>如果留空，则关闭快捷键功能</div>
             <a href="https://tauri.app/v1/api/js/globalshortcut" target="_blank">
               https://tauri.app/v1/api/js/globalshortcut
             </a>
