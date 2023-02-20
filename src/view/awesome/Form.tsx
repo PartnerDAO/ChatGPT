@@ -29,31 +29,23 @@ const AwesomeForm: ForwardRefRenderFunction<FormProps, AwesomeFormProps> = ({ re
 
   return (
     <Form form={form} labelCol={{ span: 4 }} initialValues={initFormValue}>
-      <Form.Item
-        label="Title"
-        name="title"
-        rules={[{ required: true, message: 'Please enter a title!' }]}
-      >
+      <Form.Item label="标题" name="title" rules={[{ required: true, message: '请输入标题!' }]}>
         <Input placeholder="Please enter a title" {...DISABLE_AUTO_COMPLETE} />
       </Form.Item>
       <Form.Item
         label="URL"
         name="url"
-        rules={[{ required: true, message: 'Please enter the URL' }, { type: 'url' }]}
+        rules={[{ required: true, message: '请输入 URL' }, { type: 'url' }]}
       >
-        <Input placeholder="Please enter the URL" {...DISABLE_AUTO_COMPLETE} />
+        <Input placeholder="请输入 URL" {...DISABLE_AUTO_COMPLETE} />
       </Form.Item>
-      <Form.Item
-        label="Category"
-        name="category"
-        rules={[{ required: true, message: 'Please enter a category' }]}
-      >
-        <Input placeholder="Please enter a category" {...DISABLE_AUTO_COMPLETE} />
+      <Form.Item label="分类" name="category" rules={[{ required: true, message: '请输入分类' }]}>
+        <Input placeholder="请输入分类" {...DISABLE_AUTO_COMPLETE} />
       </Form.Item>
-      <Form.Item label="Tags" name="tags">
+      <Form.Item label="标签" name="tags">
         <Tags value={record?.tags} />
       </Form.Item>
-      <Form.Item label="Enable" name="enable" valuePropName="checked">
+      <Form.Item label="启用" name="enable" valuePropName="checked">
         <Switch />
       </Form.Item>
     </Form>

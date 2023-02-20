@@ -36,12 +36,11 @@ const SwitchOrigin: FC<SwitchOriginProps> = ({ name }) => {
                     <b>仪表板设置为应用程序默认的窗口。</b>
                   </p>
                   <p>
-                    If this is enabled, the <Tag color="blue">Switch Origin {labelName}</Tag>{' '}
-                    setting will be invalid.
+                    如果启用此功能， <Tag color="blue">Switch Origin {labelName}</Tag> 设置将无效。
                   </p>
                   <p>
-                    If you want to add a new URL to the dashboard, add it in the{' '}
-                    <Link to="/awesome">Awesome</Link> menu and make sure it is enabled.
+                    如果您想向仪表板添加一个新的URL，请将其添加到 <Link to="/awesome">Awesome</Link>{' '}
+                    菜单中，并确保已启用。
                   </p>
                 </div>
               }
@@ -66,7 +65,8 @@ const SwitchOrigin: FC<SwitchOriginProps> = ({ name }) => {
                     <b>将单个 URL 设置为应用程序默认窗口。</b>
                   </p>
                   <p>
-                    如果您需要设置一个新的网址作为应用程序加载窗口，请在 <Link to="/awesome">Awesome</Link> 菜单的页面添加，然后选择它。
+                    如果您需要设置一个新的网址作为应用程序加载窗口，请在{' '}
+                    <Link to="/awesome">Awesome</Link> 菜单的页面添加，然后选择它。
                   </p>
                 </div>
               }

@@ -61,13 +61,13 @@ export default function SyncPrompts() {
       <div className="chat-table-btns">
         <Popconfirm
           overlayStyle={{ width: 250 }}
-          title="Sync will overwrite the previous data, confirm to sync?"
+          title="同步将覆盖之前的数据，是否同步?"
           placement="topLeft"
           onConfirm={handleSync}
-          okText="Yes"
-          cancelText="No"
+          okText="是"
+          cancelText="否"
         >
-          <Button type="primary">Sync</Button>
+          <Button type="primary">同步</Button>
         </Popconfirm>
         <div>
           {selectedItems.length > 0 && (
@@ -84,11 +84,11 @@ export default function SyncPrompts() {
       <div className="chat-table-tip">
         <div className="chat-sync-path">
           <FilePath url={promptsURL} content="f/awesome-chatgpt-prompts/prompts.csv" />
-          <FilePath label="CACHE" paths="cache_model/chatgpt_prompts.json" />
+          <FilePath label="缓存" paths="cache_model/chatgpt_prompts.json" />
         </div>
         {lastUpdated && (
           <span style={{ marginLeft: 10, color: '#888', fontSize: 12 }}>
-            Last updated on {fmtDate(lastUpdated)}
+            最后一次更新 {fmtDate(lastUpdated)}
           </span>
         )}
       </div>

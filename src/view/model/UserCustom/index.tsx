@@ -100,7 +100,7 @@ export default function UserCustom() {
     <div>
       <div className="chat-table-btns">
         <Button className="chat-add-btn" type="primary" onClick={opInfo.opNew}>
-          Add Model
+          添加模型
         </Button>
         <div>
           {selectedItems.length > 0 && (
@@ -115,10 +115,10 @@ export default function UserCustom() {
         </div>
       </div>
       <div className="chat-table-tip">
-        <FilePath label="CACHE" paths="cache_model/user_custom.json" />
+        <FilePath label="缓存" paths="cache_model/user_custom.json" />
         {lastUpdated && (
           <span style={{ marginLeft: 10, color: '#888', fontSize: 12 }}>
-            Last updated on {fmtDate(lastUpdated)}
+            最后一次更新 {fmtDate(lastUpdated)}
           </span>
         )}
       </div>

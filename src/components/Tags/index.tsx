@@ -12,7 +12,7 @@ interface TagsProps {
   max?: number;
 }
 
-const Tags: FC<TagsProps> = ({ max = 99, value = [], onChange, addTxt = 'New Tag' }) => {
+const Tags: FC<TagsProps> = ({ max = 99, value = [], onChange, addTxt = '新标签' }) => {
   const [tags, setTags] = useState<string[]>(value);
   const [inputVisible, setInputVisible] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState('');

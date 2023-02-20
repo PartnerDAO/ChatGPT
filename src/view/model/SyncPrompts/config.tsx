@@ -27,7 +27,7 @@ export const syncColumns = () => [
     render: () => <Tag>chatgpt-prompts</Tag>,
   },
   {
-    title: '开关',
+    title: '启用',
     dataIndex: 'enable',
     key: 'enable',
     // width: 80,

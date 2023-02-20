@@ -47,8 +47,8 @@ pub fn init() -> Menu {
   let is_dark = app_conf.clone().theme_check("dark");
   let is_system = app_conf.clone().theme_check("system");
 
-  let update_prompt = CustomMenuItem::new("update_prompt".to_string(), "Prompt");
-  let update_silent = CustomMenuItem::new("update_silent".to_string(), "Silent");
+  let update_prompt = CustomMenuItem::new("update_prompt".to_string(), "提示更新");
+  let update_silent = CustomMenuItem::new("update_silent".to_string(), "静默更新");
   // let _update_disable = CustomMenuItem::new("update_disable".to_string(), "Disable");
 
   let popup_search = CustomMenuItem::new("popup_search".to_string(), "弹出搜索");
@@ -67,7 +67,7 @@ pub fn init() -> Menu {
     titlebar
   };
 
-  let system_tray = CustomMenuItem::new("system_tray".to_string(), "System Tray");
+  let system_tray = CustomMenuItem::new("system_tray".to_string(), "系统托盘");
   let system_tray_menu = if app_conf.tray {
     system_tray.selected()
   } else {
@@ -163,12 +163,9 @@ pub fn init() -> Menu {
     "浏览",
     Menu::new()
       .add_item(CustomMenuItem::new("go_back".to_string(), "返回").accelerator("CmdOrCtrl+["))
+      .add_item(CustomMenuItem::new("go_forward".to_string(), "前进").accelerator("CmdOrCtrl+]"))
       .add_item(
-        CustomMenuItem::new("go_forward".to_string(), "前进").accelerator("CmdOrCtrl+]"),
-      )
-      .add_item(
-        CustomMenuItem::new("scroll_top".to_string(), "回到顶部")
-          .accelerator("CmdOrCtrl+Up"),
+        CustomMenuItem::new("scroll_top".to_string(), "回到顶部").accelerator("CmdOrCtrl+Up"),
       )
       .add_item(
         CustomMenuItem::new("scroll_bottom".to_string(), "滚动到底部")
@@ -176,14 +173,12 @@ pub fn init() -> Menu {
       )
       .add_native_item(MenuItem::Separator)
       .add_item(
-        CustomMenuItem::new("zoom_0".to_string(), "Zoom to Actual Size").accelerator("CmdOrCtrl+0"),
+        CustomMenuItem::new("zoom_0".to_string(), "缩放到实际大小").accelerator("CmdOrCtrl+0"),
       )
-      .add_item(CustomMenuItem::new("zoom_out".to_string(), "Zoom Out").accelerator("CmdOrCtrl+-"))
-      .add_item(CustomMenuItem::new("zoom_in".to_string(), "Zoom In").accelerator("CmdOrCtrl+Plus"))
+      .add_item(CustomMenuItem::new("zoom_out".to_string(), "缩小").accelerator("CmdOrCtrl+-"))
+      .add_item(CustomMenuItem::new("zoom_in".to_string(), "放大").accelerator("CmdOrCtrl+Plus"))
       .add_native_item(MenuItem::Separator)
-      .add_item(
-        CustomMenuItem::new("reload".to_string(), "刷新").accelerator("CmdOrCtrl+R"),
-      ),
+      .add_item(CustomMenuItem::new("reload".to_string(), "刷新").accelerator("CmdOrCtrl+R")),
   );
 
   let window_menu = Submenu::new(
@@ -191,7 +186,7 @@ pub fn init() -> Menu {
     Menu::new()
       .add_item(CustomMenuItem::new(
         "app_website".to_string(),
-        "ChatGPT User's Guide",
+        "ChatGPT 用户指南",
       ))
       .add_item(CustomMenuItem::new("dalle2".to_string(), "DALL·E 2"))
       .add_native_item(MenuItem::Separator)
@@ -274,8 +269,8 @@ pub fn menu_handler(event: WindowMenuEvent<tauri::Wry>) {
     "sync_prompts" => {
       tauri::api::dialog::ask(
         app.get_window("core").as_ref(),
-        "Sync Prompts",
-        "Data sync will enable all prompts, are you sure you want to sync?",
+        "同步 Prompts",
+        "数据同步将启用所有Prompts，您确定要同步吗?",
         move |is_restart| {
           if is_restart {
             app
@@ -408,39 +403,39 @@ pub fn tray_menu() -> SystemTray {
     let mut tray_menu = SystemTrayMenu::new()
       .add_item(CustomMenuItem::new(
         "control_center".to_string(),
-        "Control Center",
+        "控制中心",
       ))
       .add_native_item(SystemTrayMenuItem::Separator);
 
     if AppConf::read().hide_dock_icon {
       tray_menu = tray_menu.add_item(CustomMenuItem::new(
         "show_dock_icon".to_string(),
-        "Show Dock Icon",
+        "显示 Dock 图标",
       ));
     } else {
       tray_menu = tray_menu
         .add_item(CustomMenuItem::new(
           "hide_dock_icon".to_string(),
-          "Hide Dock Icon",
+          "隐藏 Dock 图标",
         ))
-        .add_item(CustomMenuItem::new("show_core".to_string(), "Show Window"));
+        .add_item(CustomMenuItem::new("show_core".to_string(), "显示窗口"));
     }
 
     SystemTray::new().with_menu(
       tray_menu
         .add_native_item(SystemTrayMenuItem::Separator)
-        .add_item(CustomMenuItem::new("quit".to_string(), "Quit")),
+        .add_item(CustomMenuItem::new("quit".to_string(), "退出")),
     )
   } else {
     SystemTray::new().with_menu(
       SystemTrayMenu::new()
         .add_item(CustomMenuItem::new(
           "control_center".to_string(),
-          "Control Center",
+          "控制中心",
         ))
         .add_item(CustomMenuItem::new("show_core".to_string(), "Show Window"))
         .add_native_item(SystemTrayMenuItem::Separator)
-        .add_item(CustomMenuItem::new("quit".to_string(), "Quit")),
+        .add_item(CustomMenuItem::new("quit".to_string(), "退出")),
     )
   }
 }

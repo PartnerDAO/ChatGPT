@@ -70,11 +70,11 @@ export default function SyncRecord() {
       <div className="chat-table-tip">
         <div className="chat-sync-path">
           <FilePath url={filePath} />
-          <FilePath label="CACHE" paths={`cache_model/${state?.id}.json`} />
+          <FilePath label="缓存" paths={`cache_model/${state?.id}.json`} />
         </div>
         {state?.last_updated && (
           <span style={{ marginLeft: 10, color: '#888', fontSize: 12 }}>
-            Last updated on {fmtDate(state?.last_updated)}
+            最后一次更新 {fmtDate(state?.last_updated)}
           </span>
         )}
       </div>

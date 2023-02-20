@@ -107,7 +107,7 @@ export default function Awesome() {
     });
   };
 
-  const modalTitle = `${{ new: 'Create', edit: 'Edit' }[opInfo.opType]} URL`;
+  const modalTitle = `${{ new: '创建', edit: '编辑' }[opInfo.opType]} URL`;
 
   return (
     <div>
@@ -117,7 +117,7 @@ export default function Awesome() {
             添加 URL
           </Button>
           <Button type="dashed" onClick={handlePreview}>
-            Preview Dashboard
+            预览仪表盘
           </Button>
           <PreviewTip />
         </div>
@@ -177,16 +177,15 @@ const PreviewTip = () => {
       overlayInnerStyle={{ width: 400 }}
       title={
         <div className="awesome-tips">
-          Click the button to preview, and in
-          <Link to="/settings"> Settings </Link>
-          you can set a single URL or Dashboard as the default window for the app.
+          点击按钮进行预览，在 <Link to="/settings"> Settings </Link>{' '}
+          中，您可以将单个URL或仪表板设置为应用程序的默认窗口。
           <br />
           <Tag onClick={() => handleGo('main_window')} color="blue">
-            Main Window
+            主界面
           </Tag>
           {'or '}
           <Tag onClick={() => handleGo('tray_window')} color="blue">
-            SystemTray Window
+            系统托盘
           </Tag>
         </div>
       }

@@ -23,7 +23,7 @@ export const awesomeColumns = () => [
   //   width: 120,
   // },
   {
-    title: '开关',
+    title: '启用',
     dataIndex: 'enable',
     key: 'enable',
     width: 80,

@@ -130,7 +130,7 @@ export default function SyncCustom() {
         type="primary"
         onClick={opInfo.opNew}
       >
-        Add PATH
+        添加路径
       </Button>
       <Table
         key="id"
@@ -143,7 +143,7 @@ export default function SyncCustom() {
       <Modal
         open={isVisible}
         onCancel={hide}
-        title="Sync PATH"
+        title="同步路径"
         onOk={handleOk}
         destroyOnClose
         maskClosable={false}

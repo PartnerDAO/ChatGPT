@@ -49,7 +49,7 @@ export const syncColumns = () => [
         <Space>
           <Popconfirm
             overlayStyle={{ width: 250 }}
-            title="Sync will overwrite the previous data, confirm to sync?"
+            title="同步将覆盖之前的数据，是否同步?"
             onConfirm={() => actions.setRecord(row, 'sync')}
             okText="Yes"
             cancelText="No"

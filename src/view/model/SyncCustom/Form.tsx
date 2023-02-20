@@ -93,20 +93,12 @@ const SyncForm: ForwardRefRenderFunction<FormProps, SyncFormProps> = ({ record, 
   return (
     <>
       <Form form={form} labelCol={{ span: 4 }} initialValues={initFormValue}>
-        <Form.Item
-          label="Name"
-          name="name"
-          rules={[{ required: true, message: 'Please enter a name!' }]}
-        >
-          <Input placeholder="Please enter a name" {...DISABLE_AUTO_COMPLETE} />
+        <Form.Item label="名字" name="name" rules={[{ required: true, message: '请输入名字!' }]}>
+          <Input placeholder="请输入名字" {...DISABLE_AUTO_COMPLETE} />
         </Form.Item>
-        <Form.Item
-          label="PATH"
-          name="path"
-          rules={[{ required: true, message: 'Please enter the path!' }]}
-        >
+        <Form.Item label="路径" name="path" rules={[{ required: true, message: '请输入路径!' }]}>
           <Input
-            placeholder="YOUR_PATH"
+            placeholder="你的路径"
             addonBefore={pathOptions}
             addonAfter={extOptions}
             {...DISABLE_AUTO_COMPLETE}
@@ -118,7 +110,7 @@ const SyncForm: ForwardRefRenderFunction<FormProps, SyncFormProps> = ({ record, 
       </Form>
       <div className="tip">
         <p>
-          The file supports only {csvTip} and {jsonTip} formats.
+          只支持 {csvTip} 和 {jsonTip} 格式的文件.
         </p>
       </div>
     </>

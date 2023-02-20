@@ -8,9 +8,7 @@ const UALabel = () => {
   return (
     <span>
       User Agent (SystemTray){' '}
-      <Tooltip
-        title={<div>For a better experience, we recommend using the Mobile User-Agent.</div>}
-      >
+      <Tooltip title={<div>为了获得更好的体验，我们建议使用移动端UA。</div>}>
         <QuestionCircleOutlined style={{ color: '#1677ff' }} />
       </Tooltip>
     </span>

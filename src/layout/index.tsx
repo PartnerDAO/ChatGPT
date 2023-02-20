@@ -8,6 +8,7 @@ import { invoke } from '@tauri-apps/api';
 import useInit from '@/hooks/useInit';
 import Routes, { menuItems } from '@/routes';
 import './index.scss';
+import zhCN from 'antd/locale/zh_CN';
 
 const { Content, Footer, Sider } = Layout;
 
@@ -47,7 +48,10 @@ export default function ChatLayout() {
   if (isDashboard === null) return null;
 
   return (
-    <ConfigProvider theme={{ algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
+    <ConfigProvider
+      theme={{ algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm }}
+      locale={zhCN}
+    >
       {isDashboard ? (
         <Routes />
       ) : (

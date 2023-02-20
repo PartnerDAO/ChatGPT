@@ -31,32 +31,24 @@ const UserCustomForm: ForwardRefRenderFunction<FormProps, UserCustomFormProps> =
 
   return (
     <Form form={form} labelCol={{ span: 4 }} initialValues={initFormValue}>
-      <Form.Item
-        label="/{cmd}"
-        name="cmd"
-        rules={[{ required: true, message: 'Please enter the {cmd}!' }]}
-      >
-        <Input placeholder="Please enter the {cmd}" {...DISABLE_AUTO_COMPLETE} />
+      <Form.Item label="/{cmd}" name="cmd" rules={[{ required: true, message: '请输入 {cmd}!' }]}>
+        <Input placeholder="请输入 {cmd}" {...DISABLE_AUTO_COMPLETE} />
       </Form.Item>
-      <Form.Item
-        label="Act"
-        name="act"
-        rules={[{ required: true, message: 'Please enter the Act!' }]}
-      >
-        <Input placeholder="Please enter the Act" {...DISABLE_AUTO_COMPLETE} />
+      <Form.Item label="Act" name="act" rules={[{ required: true, message: '请输入 Act!' }]}>
+        <Input placeholder="请输入 Act" {...DISABLE_AUTO_COMPLETE} />
       </Form.Item>
-      <Form.Item label="Tags" name="tags">
+      <Form.Item label="标签" name="tags">
         <Tags value={record?.tags} />
       </Form.Item>
-      <Form.Item label="Enable" name="enable" valuePropName="checked">
+      <Form.Item label="启用" name="enable" valuePropName="checked">
         <Switch />
       </Form.Item>
       <Form.Item
         label="Prompt"
         name="prompt"
-        rules={[{ required: true, message: 'Please enter a prompt!' }]}
+        rules={[{ required: true, message: '请输入 prompt!' }]}
       >
-        <Input.TextArea rows={4} placeholder="Please enter a prompt" {...DISABLE_AUTO_COMPLETE} />
+        <Input.TextArea rows={4} placeholder="请输入 prompt" {...DISABLE_AUTO_COMPLETE} />
       </Form.Item>
     </Form>
   );

@@ -29,7 +29,7 @@ export const modelColumns = () => [
     ),
   },
   {
-    title: '开关',
+    title: '启用',
     dataIndex: 'enable',
     key: 'enable',
     width: 80,
