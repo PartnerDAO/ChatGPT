@@ -2,7 +2,7 @@ name: Release CI
 
 on:
   push:
-    branches: [zhcn]
+    branches: [main]
   pull_request:
     branches: [master]
 
