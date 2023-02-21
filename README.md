@@ -1,5 +1,5 @@
 
-<<AIGC时代：超级个体的崛起>>
+PartnerDAO  & <<AIGC时代：超级个体的崛起>>创作团队 联合出品。
 
 ChatGPT 桌面版的中文版。下方保留原软件的readme部分
 
