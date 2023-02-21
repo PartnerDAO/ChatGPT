@@ -3,7 +3,7 @@ PartnerDAO  & <<AIGC时代：超级个体的崛起>>创作团队 联合出品。
 
 ChatGPT 桌面版的中文版。下方保留原软件的readme部分
 
-下载地址 ： <a link='https://github.com/PartnerDAO/ChatGPT/releases/download/untagged-c31c2c6996e80f507516/ChatGPT_0.11.0_x64_cn.msi' >Windows中文版</a>
+下载地址 ： <a href="https://github.com/PartnerDAO/ChatGPT/releases/download/untagged-c31c2c6996e80f507516/ChatGPT_0.11.0_x64_cn.msi">Windows中文版</a>
 
 <p align="center">
   <img width="180" src="./public/logo.png" alt="ChatGPT">
